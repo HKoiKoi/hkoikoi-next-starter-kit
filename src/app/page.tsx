@@ -9,13 +9,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { siteConfig } from "@/config/site";
 
 const stack = [
-  ["Next.js 16", "App Router, React 19, React Compiler"],
-  ["TypeScript", "엄격한 타입 안전성"],
-  ["Tailwind CSS v4", "유틸리티 퍼스트 스타일링"],
-  ["shadcn/ui", "복사해서 쓰는 접근성 좋은 컴포넌트"],
-  ["lucide-react", "일관된 아이콘 세트"],
-  ["usehooks-ts", "검증된 React 훅 모음"],
-  ["Pretendard", "CDN으로 적용된 한글 폰트"],
+  { title: "Next.js 16", desc: "App Router, React 19, React Compiler" },
+  { title: "TypeScript", desc: "엄격한 타입 안전성" },
+  { title: "Tailwind CSS v4", desc: "유틸리티 퍼스트 스타일링" },
+  { title: "shadcn/ui", desc: "복사해서 쓰는 접근성 좋은 컴포넌트" },
+  { title: "lucide-react", desc: "일관된 아이콘 세트" },
+  { title: "usehooks-ts", desc: "검증된 React 훅 모음" },
+  { title: "Pretendard", desc: "CDN으로 적용된 한글 폰트" },
 ];
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {stack.map(([title, desc]) => (
+        {stack.map(({ title, desc }) => (
           <Card key={title}>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
