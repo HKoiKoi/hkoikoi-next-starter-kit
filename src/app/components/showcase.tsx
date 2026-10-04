@@ -1,12 +1,19 @@
-"use client";
-
 import { Info } from "lucide-react";
-import { toast } from "sonner";
 
 import { EmptyState } from "@/components/common/empty-state";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Dialog,
@@ -16,14 +23,30 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { ToastButton } from "./toast-button";
 
 export function Showcase() {
   return (
@@ -61,6 +84,26 @@ export function Showcase() {
             </TooltipTrigger>
             <TooltipContent>툴팁 내용</TooltipContent>
           </Tooltip>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">드롭다운</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>항목 1</DropdownMenuItem>
+              <DropdownMenuItem>항목 2</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline">시트</Button>
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>시트</SheetTitle>
+                <SheetDescription>사이드 패널 예시입니다.</SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
           <Avatar>
             <AvatarFallback>HK</AvatarFallback>
           </Avatar>
@@ -93,7 +136,12 @@ export function Showcase() {
             <Checkbox id="terms" />
             <FieldLabel htmlFor="terms">약관에 동의합니다</FieldLabel>
           </Field>
-          <Button onClick={() => toast.success("제출되었습니다")}>제출</Button>
+          {/* Label 단독 사용 예시 (Field 없이 Label + Input 직접 연결) */}
+          <div className="grid gap-2">
+            <Label htmlFor="nickname">닉네임</Label>
+            <Input id="nickname" placeholder="닉네임을 입력하세요" />
+          </div>
+          <ToastButton />
         </FieldGroup>
       </TabsContent>
 
@@ -107,6 +155,28 @@ export function Showcase() {
           <Skeleton className="h-4 w-1/2" />
           <Skeleton className="h-4 w-1/3" />
         </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge>Default</Badge>
+          <Badge variant="secondary">Secondary</Badge>
+          <Badge variant="outline">Outline</Badge>
+        </div>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">홈</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>컴포넌트</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <Card>
+          <CardHeader>
+            <CardTitle>카드</CardTitle>
+            <CardDescription>Card 컴포넌트 예시입니다.</CardDescription>
+          </CardHeader>
+        </Card>
         <EmptyState title="데이터가 없습니다" description="EmptyState 공통 컴포넌트 예시입니다." />
       </TabsContent>
     </Tabs>
