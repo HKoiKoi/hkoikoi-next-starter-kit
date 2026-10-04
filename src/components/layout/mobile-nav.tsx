@@ -27,7 +27,7 @@ export function MobileNav() {
         <SheetHeader>
           <SheetTitle>메뉴</SheetTitle>
         </SheetHeader>
-        <MainNav className="flex-col items-start gap-4 px-4 text-base" onNavigate={close} />
+        <MainNav aria-label="모바일 내비게이션" className="flex-col items-start gap-4 px-4 text-base" onNavigate={close} />
       </SheetContent>
     </Sheet>
   );
