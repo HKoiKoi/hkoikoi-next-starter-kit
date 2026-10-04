@@ -1,4 +1,7 @@
 {
   "language": "ko",
-  "model": "sonnet"
+  "model": "sonnet",
+  "permissions": {
+    "allow": ["Bash", "WebFetch", "WebSearch"]
+  }
 }
