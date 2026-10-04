@@ -1,4 +1,4 @@
-# Next Starter Kit
+# HKoiKoi Next Starter Kit
 
 Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui · lucide-react · usehooks-ts · Pretendard(CDN)
 
