@@ -2,6 +2,6 @@
   "language": "ko",
   "model": "sonnet",
   "permissions": {
-    "allow": ["Bash", "WebFetch", "WebSearch"]
+    "allow": ["Bash", "WebFetch", "WebSearch", "mcp__playwright"]
   }
 }
