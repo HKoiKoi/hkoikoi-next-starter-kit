@@ -15,6 +15,11 @@ npm run lint    # eslint (flat config, eslint.config.mjs)
 
 테스트 러너는 설정되어 있지 않다. 타입 체크는 `npx tsc --noEmit`.
 
+## MCP
+
+- `sequential-thinking`: 프로젝트 `.mcp.json`에 등록. 복잡한 문제를 단계별로 분해해 추론할 때 사용.
+- `context7`, `playwright`: 사용자 수준(`~/.claude.json`)에 전역 등록되어 있다. 라이브러리 문서 조회(context7)와 브라우저 검증(playwright)에 사용.
+
 ## Stack
 
 Next.js 16 (App Router) · React 19 · React Compiler 활성화(`next.config.ts`의 `reactCompiler: true`, 수동 `useMemo`/`useCallback` 불필요) · TypeScript · Tailwind CSS v4 (CSS-first, `tailwind.config` 없음 — 테마 토큰은 `src/app/globals.css`의 `@theme inline`) · shadcn/ui (`radix-nova` 스타일, `components.json`) · next-themes · usehooks-ts · Pretendard (`src/app/layout.tsx`에서 CDN 로드).

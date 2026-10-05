@@ -2,7 +2,13 @@
   "language": "ko",
   "model": "sonnet",
   "permissions": {
-    "allow": ["Bash", "WebFetch", "WebSearch", "mcp__playwright"]
+    "allow": [
+      "Bash",
+      "WebFetch",
+      "WebSearch",
+      "mcp__playwright",
+      "mcp__sequential-thinking"
+    ]
   },
   "hooks": {
     "Notification": [
